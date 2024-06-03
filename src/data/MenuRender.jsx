@@ -10,8 +10,14 @@ const MenuRender = ({ menuItems }) => {
         <div key={item.idMeal}>
           <h2>{item.strMeal}</h2>
           <p>{item.strTags}</p>
-          <p>{item.strCategory}</p>
-          <p>{item.strArea}</p>
+          <div className="category">
+            <label>Category:</label>
+            <p>{item.strCategory}</p>
+          </div>
+          <div className="area">
+            <label>Country of origin:</label>
+            <p>{item.strArea}</p>
+          </div>
           <p>{item.strSource}</p>
           <img src={item.strMealThumb} alt={item.strMeal} />
           <iframe src={item.strYoutube} height="350" width="500"></iframe>
