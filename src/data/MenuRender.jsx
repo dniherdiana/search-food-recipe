@@ -1,5 +1,4 @@
 import React from "react";
-import ErrorBoundary from "./ErrorBoundary";
 
 const MenuRender = ({ menuItems }) => {
   if (menuItems === null) {
@@ -11,6 +10,9 @@ const MenuRender = ({ menuItems }) => {
         <div key={item.idMeal}>
           <h2>{item.strMeal}</h2>
           <p>{item.strTags}</p>
+          <p>{item.strCategory}</p>
+          <p>{item.strArea}</p>
+          <p>{item.strSource}</p>
           <img src={item.strMealThumb} alt={item.strMeal} />
           <iframe src={item.strYoutube} height="350" width="500"></iframe>
           <p>{item.strInstructions}</p>
@@ -21,14 +23,7 @@ const MenuRender = ({ menuItems }) => {
               {[...Array(20).keys()].map((i) => {
                 const ingredient = item[`strIngredient${i + 1}`];
                 const measure = item[`strMeasure${i + 1}`];
-                if (
-                  // ingredient &&
-                  // measure &&
-                  // ingredient !== "" &&
-                  // measure !== " "
-                  ingredient &&
-                  measure !== ""
-                ) {
+                if (ingredient && measure !== "") {
                   return <li key={i}>{`${measure} - ${ingredient}`}</li>;
                 }
                 return null;
