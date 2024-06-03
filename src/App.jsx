@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import FetchData from "./data/FetchData";
-import MenuRender from "./data/MenuRender";
+import MenuRender from "../src/pages/MenuRender";
 import Footer from "./components/Footer";
-import ErrorBoundary from "./data/ErrorBoundary";
 
 const App = () => {
   const [searchResults, setSearchResults] = useState([]);
